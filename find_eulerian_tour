@@ -1,0 +1,23 @@
+def find_eulerian_tour(graph):
+	tour = []
+	tour.append(graph[0][0])
+	temp = real_tour(graph, graph[0][1], 0)
+	print temp
+	tour.append(temp)
+	return tour
+
+
+def real_tour(graph, node, index):
+	if len(graph == 0):
+		return node
+	else:
+		new_graph = graph[:index] + graph[index+1:]
+		tour = [node] + [real_tour(new_graph, find_next_node(new_graph, node), get_index(new_graph, node))]
+
+
+def find_next_node(graph, node):
+
+
+
+
+#[(1,2),(2,3),(3,1)]
